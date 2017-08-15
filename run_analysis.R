@@ -103,9 +103,13 @@ names(cleanData) <- c("subject", new_names)
 str(cleanData)
 
 # Here is the list containg the avreages of variables for each activity and each subject:
-meanList <- sapply(cleanData[,3:ncol(cleanData)], 
+means <- sapply(cleanData[,3:ncol(cleanData)], 
                    function(x) tapply(x, 
                                       INDEX = interaction(cleanData$activity, cleanData$subject), 
                                       FUN = mean, simplify = TRUE))
-
+rowdata <- as.character(row.names(means))
+activity_subject <- t(data.frame(strsplit(rowdata,"\\.")))
+tidyList <- cbind(activity_subject,data.frame(means))
+names(tidyList) <- c("Activity", "Subject", new_names[2:80])
+write.table(tidyList, file = "meanData.txt", row.names = FALSE)
 
