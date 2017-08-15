@@ -1,4 +1,13 @@
 # Tidy Data Assignment
+
+## Repo files
+In this repo the following files exist:
+1. "README.md" : contains the information about the files and how the code (.R) file works.
+2. "run_analysis.R" : R code that creates a tidy dataset containing the average values for the dataset provided for 
+  Coursera's tidy data assignement.
+3. "codebook.md" : The code book explaining the dataset's variables
+
+## Descriptions
 This repo contains the project for coursera Tidy Data course assignment.
 
 The code "run_analysis.R" reads the data files in the working directory : "./UCI HAR Dataset/"
